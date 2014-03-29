@@ -1,0 +1,46 @@
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.dynastymasra.main.MainActivity$PlaceholderFragment">
+
+    <TextView
+            android:id="@+id/text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/celsius"/>
+
+    <com.dynastymasra.main.EditNumber
+            android:id="@+id/editTextCelsius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text"
+            android:contentDescription="@string/celsius"
+            android:gravity="right|center_vertical"
+            android:inputType="numberDecimal"
+            android:tag="celsius"/>
+
+    <TextView
+            android:id="@+id/text2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextCelsius"
+            android:gravity="center"
+            android:text="@string/fahrenheit"/>
+
+    <com.dynastymasra.main.EditNumber
+            android:id="@+id/editTextFahrenheit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text2"
+            android:contentDescription="@string/fahrenheit"
+            android:gravity="right|center_vertical"
+            android:inputType="numberDecimal"/>
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+#########
+# Linux #
+#########
+ls
+.directory
+
+##################
+# Eclipse Config #
+##################
+.metadata
+
+###################
+# Intellij Config #
+###################
+*.iml
+*.ipr
+*.iws
+*.ids
+.idea
+.idea/**/*
+out
+
+###########################
+# Project Intellij Config #
+###########################
+module_*.xml
+#server.properties
+#server.xml
+
+################
+# maven config #
+################
+target
+
+###################
+# Netbeans config #
+###################
+lib
+nbactions.xml
+nb-configuration.xml
+catalog.xml
+
+####################
+# Compression file #
+####################
+*.zip
+*.rar
+
+###########
+# Android #
+###########
+bin
+assets
+build.xml
+libs
+ant.properties
+local.properties
+proguard-project.txt
+
+#################
+# jasper config #
+#################
+*.jasper
