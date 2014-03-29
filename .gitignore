@@ -51,6 +51,7 @@ catalog.xml
 ###########
 bin
 assets
+classes
 build.xml
 libs
 ant.properties
