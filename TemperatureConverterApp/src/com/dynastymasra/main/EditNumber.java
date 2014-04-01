@@ -37,7 +37,7 @@ public class EditNumber extends EditText {
     }
 
     public Double getNumber() {
-        final String s = getText().toString();
+        final String s= getText().toString();
         Log.d(TAG, "getNumber converting " + s);
         if (s.equals("")) {
             return Double.NaN;

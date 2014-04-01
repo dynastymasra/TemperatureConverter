@@ -12,9 +12,7 @@ import java.util.HashMap;
  * Blogspot : dynastymasra.wordpress.com | dynastymasra.blogspot.com
  */
 public class TemperatureConverterTest extends TestCase {
-
     private static final HashMap<Double, Double> sConversionTableDouble = new HashMap<Double, Double>();
-
     static {
         sConversionTableDouble.put(0.0, 32.0);
         sConversionTableDouble.put(100.0, 212.0);
@@ -29,16 +27,18 @@ public class TemperatureConverterTest extends TestCase {
         super(name);
     }
 
-    protected void setUp() throws Exception {
+    @Override
+    public void setUp() throws Exception {
         super.setUp();
 
     }
 
-    protected void tearDown() throws Exception {
+    @Override
+    public void tearDown() throws Exception {
         super.tearDown();
     }
 
-    public void testFahrenheitToCelsius() {
+    public void testFahrenheitToCelsius() throws Exception {
         for (Double c : sConversionTableDouble.keySet()) {
             final Double f = sConversionTableDouble.get(c);
             final Double ca = TemperatureConverter.fahrenheitToCelsius(f);
@@ -47,7 +47,7 @@ public class TemperatureConverterTest extends TestCase {
         }
     }
 
-    public void testCelsiusToFahrenheit() {
+    public void testCelsiusToFahrenheit() throws Exception {
         for (double c: sConversionTableDouble.keySet()) {
             final double f = sConversionTableDouble.get(c);
             final double fa = TemperatureConverter.celsiusToFahrenheit(c);

@@ -16,13 +16,15 @@ public class EditNumberTest extends AndroidTestCase {
         setName(name);
     }
 
-    protected void setUp() throws Exception {
+    @Override
+    public void setUp() throws Exception {
         super.setUp();
         editNumber = new EditNumber(mContext);
         editNumber.setFocusable(true);
     }
 
-    protected void tearDown() throws Exception {
+    @Override
+    public void tearDown() throws Exception {
         super.tearDown();
     }
 
@@ -30,7 +32,7 @@ public class EditNumberTest extends AndroidTestCase {
         assertNotNull(editNumber);
     }
 
-    public void testClear() {
+    public final void testClear() {
         final String value = "123.45";
         editNumber.setText(value);
         editNumber.clear();

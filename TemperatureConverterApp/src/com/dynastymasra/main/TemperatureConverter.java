@@ -16,4 +16,5 @@ public class TemperatureConverter {
     public static Double celsiusToFahrenheit(Double c) {
         return 9/5.0 * c + 32;
     }
+
 }

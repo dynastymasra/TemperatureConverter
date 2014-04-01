@@ -17,28 +17,31 @@ import android.view.View;
  * -e class com.dynastymasra.main.MainActivityTest \
  * com.dynastymasra.main.tests/android.test.InstrumentationTestRunner
  */
+
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
     private MainActivity mainActivity;
-    private EditNumber editNumberCelsius;
-    private EditNumber editNumberFahrenheit;
+    private EditNumber editTextCelsius;
+    private EditNumber editTextFahrenheit;
 
     public MainActivityTest(String name) {
         super(MainActivity.class);
         setName(name);
     }
 
-    protected void setUp() throws Exception {
+    @Override
+    public void setUp() throws Exception {
         super.setUp();
         mainActivity = getActivity();
         assertNotNull(mainActivity);
 
-        editNumberCelsius = (EditNumber) mainActivity.findViewById(R.id.editTextCelsius);
-        assertNotNull(editNumberCelsius);
-        editNumberFahrenheit = (EditNumber) mainActivity.findViewById(R.id.editTextFahrenheit);
-        assertNotNull(editNumberFahrenheit);
+        editTextCelsius = (EditNumber) mainActivity.findViewById(com.dynastymasra.main.R.id.editTextCelsius);
+        assertNotNull(editTextCelsius);
+        editTextFahrenheit = (EditNumber) mainActivity.findViewById(com.dynastymasra.main.R.id.editTextFahrenheit);
+        assertNotNull(editTextFahrenheit);
     }
 
-    protected void tearDown() throws Exception {
+    @Override
+    public void tearDown() throws Exception {
         super.tearDown();
     }
 
@@ -46,55 +49,54 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     public void testFieldOnScreen() {
         final View origin = mainActivity.getWindow().getDecorView();
 
-        ViewAsserts.assertOnScreen(origin, editNumberCelsius);
-        ViewAsserts.assertOnScreen(origin, editNumberFahrenheit);
+        ViewAsserts.assertOnScreen(origin, editTextCelsius);
+        ViewAsserts.assertOnScreen(origin, editTextFahrenheit);
     }
 
     @SmallTest
     public void testAlignment() {
-        ViewAsserts.assertRightAligned(editNumberCelsius, editNumberFahrenheit);
-        ViewAsserts.assertLeftAligned(editNumberCelsius, editNumberFahrenheit);
+        ViewAsserts.assertRightAligned(editTextCelsius, editTextFahrenheit);
+        ViewAsserts.assertLeftAligned(editTextCelsius, editTextFahrenheit);
     }
 
     @SmallTest
-    public void testFieldStartEmpty() {
-        assertTrue(editNumberCelsius.getText().toString().equals(""));
-        assertTrue(editNumberFahrenheit.getText().toString().equals(""));
+    public void testFieldStartMustEmpty() {
+        assertTrue(editTextCelsius.getText().toString().equals(""));
+        assertTrue(editTextFahrenheit.getText().toString().equals(""));
     }
 
     @SmallTest
     public void testJustification() {
         final int expected = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
-
-        assertEquals(expected, editNumberCelsius.getGravity());
-        assertEquals(expected, editNumberFahrenheit.getGravity());
+        assertEquals(expected, editTextCelsius.getGravity());
+        assertEquals(expected, editTextFahrenheit.getGravity());
     }
 
     @UiThreadTest
-    public void testFahrenheitToCelsiusConvertion() {
-        editNumberCelsius.clear();
-        editNumberFahrenheit.clear();
+    public void testFahrenheitToCelsiusConversion() {
+        editTextCelsius.clear();
+        editTextFahrenheit.clear();
         final Double f = 32.5;
-        editNumberFahrenheit.requestFocus();
-        editNumberFahrenheit.setNumber(f);
-        editNumberCelsius.requestFocus();
+        editTextFahrenheit.requestFocus();
+        editTextFahrenheit.setNumber(f);
+        editTextCelsius.requestFocus();
         final Double expected = TemperatureConverter.fahrenheitToCelsius(f);
-        final Double actual = editNumberCelsius.getNumber();
+        final Double actual = editTextCelsius.getNumber();
         final Double delta = Math.abs(expected - actual);
         assertTrue("delta=" + delta, delta < 0.005);
     }
 
     @UiThreadTest
-    public void testCelsiusToFahrenheit() {
-        editNumberCelsius.clear();
-        editNumberFahrenheit.clear();
-        final Double c = 32.5;
-        editNumberCelsius.requestFocus();
-        editNumberCelsius.setNumber(c);
-        editNumberFahrenheit.requestFocus();
-        final Double expected = TemperatureConverter.celsiusToFahrenheit(c);
-        final Double actual = editNumberFahrenheit.getNumber();
-        final Double delta = Math.abs(expected - actual);
+    public void testCelsiusToFahrenheitConversion() {
+        editTextCelsius.clear();
+        editTextFahrenheit.clear();
+        final double c = 32.5;
+        editTextCelsius.requestFocus();
+        editTextCelsius.setNumber(c);
+        editTextFahrenheit.requestFocus();
+        final double expected = TemperatureConverter.celsiusToFahrenheit(c);
+        final double actual = editTextFahrenheit.getNumber();
+        final double delta = Math.abs(expected - actual);
         assertTrue("delta=" + delta, delta < 0.005);
     }
 }
