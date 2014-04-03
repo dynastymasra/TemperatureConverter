@@ -15,7 +15,6 @@
     <name>Temperature Converter Test</name>
 
     <properties>
-        <android.jayway.version>3.8.2</android.jayway.version>
         <android.dynastymasra.version>1.0</android.dynastymasra.version>
     </properties>
 
@@ -35,6 +34,7 @@
             <groupId>com.dynastymasra</groupId>
             <artifactId>TemperatureConverterApp</artifactId>
             <version>${android.dynastymasra.version}</version>
+            <scope>provided</scope>
             <type>jar</type>
         </dependency>
     </dependencies>
@@ -48,6 +48,7 @@
                 <artifactId>android-maven-plugin</artifactId>
                 <configuration>
                     <test>
+                        <coverage>true</coverage>
                         <createReport>true</createReport>
                     </test>
                 </configuration>
