@@ -41,7 +41,7 @@
                         <platform>16</platform>
                     </sdk>
                     <emulator>
-                        <avd>JellyBeans</avd>
+                        <avd>JB</avd>
                         <wait>30000</wait>
                     </emulator>
                 </configuration>
