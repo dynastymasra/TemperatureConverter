@@ -18,33 +18,41 @@
 
     <properties>
         <android.version>4.1.2_r4</android.version>
-        <junit.version>3.8.1</junit.version>
+        <junit.version>4.11</junit.version>
         <android.support.version>19.0.1</android.support.version>
+        <android.test.version>4.1.1.4</android.test.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>android</groupId>
-            <artifactId>android</artifactId>
-            <version>${android.version}</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>android.support</groupId>
-                    <artifactId>compatibility-v4</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>android.support</groupId>
-            <artifactId>compatibility-v4</artifactId>
-            <version>${android.support.version}</version>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>android</groupId>
+                <artifactId>android</artifactId>
+                <version>${android.version}</version>
+                <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>android.support</groupId>
+                        <artifactId>compatibility-v4</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>android-test</artifactId>
+                <version>${android.test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>android.support</groupId>
+                <artifactId>compatibility-v4</artifactId>
+                <version>${android.support.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

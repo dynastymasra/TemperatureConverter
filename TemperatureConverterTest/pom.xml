@@ -21,40 +21,50 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android-test</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>com.dynastymasra</groupId>
             <artifactId>TemperatureConverterApp</artifactId>
             <version>${android.dynastymasra.version}</version>
-            <scope>provided</scope>
+            <type>apk</type>
+        </dependency>
+        <dependency>
+            <groupId>com.dynastymasra</groupId>
+            <artifactId>TemperatureConverterApp</artifactId>
+            <version>${android.dynastymasra.version}</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 
     <build>
-        <sourceDirectory>src</sourceDirectory>
         <finalName>${project.artifactId}</finalName>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
-                    <artifactId>android-maven-plugin</artifactId>
-                    <version>${android.jayway.version}</version>
-                    <extensions>true</extensions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                 <artifactId>android-maven-plugin</artifactId>
                 <configuration>
-                    <sdk>
-                        <!-- platform as api level (api level 16 = platform 4.1)-->
-                        <platform>16</platform>
-                    </sdk>
-                    <emulator>
-                        <avd>JellyBeans</avd>
-                        <wait>30000</wait>
-                    </emulator>
+                    <test>
+                        <!--<skip>true|false|auto</skip>-->
+                        <!--<instrumentationPackage>packageName</instrumentationPackage>-->
+                        `
+                        <!--<instrumentationRunner>className</instrumentationRunner>-->
+                        <!--<debug>true|false</debug>-->
+                        <!--<coverage>true|false</coverage>-->
+                        <!--<logonly>true|false</logonly>  avd-->
+                        <!--<testsize>small|medium|large</testsize>-->
+                        <createReport>true</createReport>
+                        <!--<classes>-->
+                        <!--<class>your.package.name.YourTestClass</class>-->
+                        <!--</classes>-->
+                        <!--<packages>-->
+                        <!--<package>your.package.name</package>-->
+                        <!--</packages>-->
+                    </test>
                 </configuration>
+                <extensions>true</extensions>
             </plugin>
         </plugins>
     </build>
