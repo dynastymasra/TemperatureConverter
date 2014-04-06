@@ -12,6 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * Author   : Dynastymasra
+ * Name     : Dimas Ragil T
+ * Email    : dynastymasra@gmail.com
+ * LinkedIn : http://www.linkedin.com/in/dynastymasra
+ * Blogspot : dynastymasra.wordpress.com | dynastymasra.blogspot.com
+ */
 public class MainActivity extends Activity {
     public static final String FAHRENHEIT_KEY = "com.dynastymasra.main.Fahrenheit";
     public static final String CELSIUS_KEY = "com.dynastymasra.main.Celsius";
