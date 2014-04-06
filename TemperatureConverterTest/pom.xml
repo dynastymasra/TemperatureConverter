@@ -14,26 +14,32 @@
 
     <name>Temperature Converter Test</name>
 
-    <properties>
-        <android.dynastymasra.version>1.0</android.dynastymasra.version>
-    </properties>
-
     <dependencies>
+        <dependency>
+            <groupId>android</groupId>
+            <artifactId>android</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>com.google.android</groupId>
             <artifactId>android-test</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>com.dynastymasra</groupId>
             <artifactId>TemperatureConverterApp</artifactId>
-            <version>${android.dynastymasra.version}</version>
+            <version>${project.version}</version>
             <type>apk</type>
         </dependency>
         <dependency>
             <groupId>com.dynastymasra</groupId>
             <artifactId>TemperatureConverterApp</artifactId>
-            <version>${android.dynastymasra.version}</version>
+            <version>${project.version}</version>
             <scope>provided</scope>
             <type>jar</type>
         </dependency>

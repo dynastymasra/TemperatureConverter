@@ -29,34 +29,23 @@
                 <artifactId>android-test</artifactId>
                 <version>${android.test.version}</version>
             </dependency>
+            <dependency>
+                <groupId>android</groupId>
+                <artifactId>android</artifactId>
+                <version>${android.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>android.support</groupId>
+                <artifactId>compatibility-v4</artifactId>
+                <version>${android.support.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>android</groupId>
-            <artifactId>android</artifactId>
-            <version>${android.version}</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>android.support</groupId>
-                    <artifactId>compatibility-v4</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>android.support</groupId>
-            <artifactId>compatibility-v4</artifactId>
-            <version>${android.support.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
     <build>
         <pluginManagement>
